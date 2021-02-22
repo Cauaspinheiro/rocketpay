@@ -7,9 +7,10 @@ use Mix.Config
 # Run `mix help test` for more information.
 config :rocketpay, Rocketpay.Repo,
   username: "postgres",
-  password: "123456",
+  password: "postgres",
   database: "rocketpay_test#{System.get_env("MIX_TEST_PARTITION")}",
   hostname: "localhost",
+  port: 5400,
   pool: Ecto.Adapters.SQL.Sandbox
 
 # We don't run a server during test. If one is required,
