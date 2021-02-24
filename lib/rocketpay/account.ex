@@ -5,7 +5,7 @@ defmodule Rocketpay.Account do
   alias Rocketpay.User
 
   @primary_key {:id, :binary_id, autogenerate: true}
-  @foreign_key_type  :binary_id
+  @foreign_key_type :binary_id
 
   @required_params [:balance, :user_id]
 
