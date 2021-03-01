@@ -29,4 +29,12 @@ defmodule RocketpayWeb.AccountsController do
       |> render("transaction.json", transaction: transaction)
     end
   end
+
+  def transaction_by_nickname(conn, params) do
+    with {:ok, %Transactions.Response{} = transaction} <- Rocketpay.transaction_by_nickname(params) do
+      conn
+      |> put_status(:ok)
+      |> render("transaction.json", transaction: transaction)
+    end
+  end
 end
